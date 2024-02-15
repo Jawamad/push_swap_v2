@@ -6,13 +6,13 @@
 /*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:04:51 by florian           #+#    #+#             */
-/*   Updated: 2024/02/13 17:33:07 by florian          ###   ########.fr       */
+/*   Updated: 2024/02/14 11:25:01 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	init_stack(t_stack **a, char **arv)
+void	init_stack(t_stack **a, char **arv, int err_code)
 {
 	int		i;
 	long	value;
@@ -27,12 +27,12 @@ void	init_stack(t_stack **a, char **arv)
 	while(arv[i])
 	{
 		if (check_syntax(arv[i]))
-			free_stack(a, arv,1);
+			free_stack(a, arv, err_code);
 		value = ft_atol(arv[i]);
 		if (value < -2147483648 || value > 2147483647)
-			free_stack(a, arv,1);
+			free_stack(a, arv, err_code);
 		if (check_dupli(*a, (int)value ))
-			free_stack(a, arv,1);
+			free_stack(a, arv, err_code);
 		add_node(a, (int)value);
 		i++;
 	}
@@ -45,6 +45,7 @@ int	check_syntax(char *arv)
 	int	i;
 
 	i = 0;
+	symcheck = 0;
 	while (arv[i])
 	{
 		if (ft_isdigit(arv[i]) || arv[i] == '-' || arv[i] == '+')

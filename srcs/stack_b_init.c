@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_checker.c                stack_sorted                    :+:      :+:    :+:   */
+/*   stack_b_init.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 16:22:14 by florian           #+#    #+#             */
-/*   Updated: 2024/02/06 16:22:14 by florian          ###   ########.fr       */
+/*   Created: 2024/02/14 14:30:54 by florian           #+#    #+#             */
+/*   Updated: 2024/02/15 17:21:12 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	stack_sorted(t_stack *stack)
+t_stack	init_b(t_stack a, t_stack b)
 {
-	while (stack->next)
-	{
-		if(stack->value > stack->next->value)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
-}
-
-int stack_lenght(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while(stack->next)
-	{
-		stack = stack->next;
-		i++;
-	}
-	return (i);
+	
 }

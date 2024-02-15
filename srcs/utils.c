@@ -6,7 +6,7 @@
 /*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 11:42:41 by florian           #+#    #+#             */
-/*   Updated: 2024/02/13 17:33:57 by florian          ###   ########.fr       */
+/*   Updated: 2024/02/14 11:23:36 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ long	ft_atol(const char *nptr)
 	return (res * sign);
 }
 
-int	free_stack(t_stack **stack, char **arv, int code_err)
+int	free_stack(t_stack **stack, char **arv, int err_code)
 {
 	t_stack	*temp_node;
 
@@ -47,11 +47,13 @@ int	free_stack(t_stack **stack, char **arv, int code_err)
 		free(*stack);
 		*stack = temp_node;
 	}
-	if (code_err == 1)
+	if (err_code == 1)
 	{
 		free_arv(arv);
 		return (write(1, "Error", 5), exit(1), 0);
 	}
+	if (err_code == 2)
+		return (write(1, "Error", 5), exit(1), 0);
 	return (0);
 }
 
@@ -62,5 +64,6 @@ void	free_arv(char **arv)
 	i = 0;
 	while (arv[i])
 		free(arv[i++]);
+	free(arv);
 }
 

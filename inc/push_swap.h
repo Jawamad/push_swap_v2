@@ -6,7 +6,7 @@
 /*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:28:53 by florian           #+#    #+#             */
-/*   Updated: 2024/02/13 17:33:36 by florian          ###   ########.fr       */
+/*   Updated: 2024/02/14 11:25:58 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 }	t_stack;
 
 /* parse */
-void	init_stack(t_stack **a, char **arv);
+void	init_stack(t_stack **a, char **arv, int err_code);
 int		check_syntax(char *arv);
 int		check_dupli(t_stack *stack, int value);
 
@@ -40,7 +40,7 @@ void	add_node(t_stack **stack, int value);
 
 /* utils */
 long	ft_atol(const char *nptr);
-int	free_stack(t_stack **stack, char **arv, int code_err);
+int		free_stack(t_stack **stack, char **arv, int err_code);
 void	free_arv(char **arv);
 
 /* stack_checker */
