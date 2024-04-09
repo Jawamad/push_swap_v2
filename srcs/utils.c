@@ -6,7 +6,7 @@
 /*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 11:42:41 by florian           #+#    #+#             */
-/*   Updated: 2024/02/14 11:23:36 by florian          ###   ########.fr       */
+/*   Updated: 2024/04/09 19:10:10 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long	ft_atol(const char *nptr)
 {
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 	long	res;
 
 	sign = 1;
@@ -67,3 +67,10 @@ void	free_arv(char **arv)
 	free(arv);
 }
 
+void	ft_stackadd_front(t_stack **lst, t_stack *new)
+{
+	if (!lst)
+		return ;
+	new->next = *lst;
+	*lst = new;
+}

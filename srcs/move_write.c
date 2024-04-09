@@ -6,13 +6,13 @@
 /*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 12:04:55 by florian           #+#    #+#             */
-/*   Updated: 2024/02/15 17:06:40 by florian          ###   ########.fr       */
+/*   Updated: 2024/04/08 21:54:03 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	double_move(t_stack **a, t_stack **b ,void (*f)(t_stack **),int move)
+void	double_move(t_stack **a, t_stack **b, void (*f)(t_stack **), int move)
 {
 	(*f)(a);
 	(*f)(b);
@@ -24,7 +24,7 @@ void	double_move(t_stack **a, t_stack **b ,void (*f)(t_stack **),int move)
 		write(1, "rrr\n", 4);
 }
 
-void	simple_move(t_stack **stack, void (*f)(t_stack **),int move)
+void	simple_move(t_stack **stack, void (*f)(t_stack **), int move)
 {
 	(*f)(stack);
 	if (move == 1)
@@ -41,7 +41,7 @@ void	simple_move(t_stack **stack, void (*f)(t_stack **),int move)
 		write(1, "rrb\n", 4);
 }
 
-void	push_move(t_stack **stack_1,t_stack **stack_2, int move)
+void	push_move(t_stack **stack_1, t_stack **stack_2, int move)
 {
 	push(stack_1, stack_2);
 	if (move == 1)
