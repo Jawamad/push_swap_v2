@@ -6,10 +6,9 @@
 /*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:31:19 by florian           #+#    #+#             */
-/*   Updated: 2024/04/15 15:35:58 by florian          ###   ########.fr       */
+/*   Updated: 2024/04/16 14:30:38 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../inc/checker.h"
 
@@ -43,6 +42,7 @@ int	main(int arc, char **arv)
 void	execsort(t_stack **a, t_stack **b)
 {
 	char	*line;
+
 	line = get_next_line(0);
 	while (line != NULL)
 	{
